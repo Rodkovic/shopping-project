@@ -10,7 +10,8 @@ module.exports = {
     },
     devServer: {
         port: 3000,
-        open: true
+        open: true,
+        contentBase: './src'
     },
     plugins: [
         new htmlWebpackPlugin({
@@ -21,7 +22,11 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.vue$/, loader: 'vue-loader' }
+            { test: /\.vue$/, loader: 'vue-loader' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=43960' },
+            { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' },
+            { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
         ]
     }
 }
