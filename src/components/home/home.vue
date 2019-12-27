@@ -2,15 +2,15 @@
   <div>
     <mt-swipe :auto="2000">
       <mt-swipe-item v-for="item in list" :key="item.id">
-        <img :src="'http://localhost:3333/' + item.picurl" />
+        <img :src="item.img" />
       </mt-swipe-item>
     </mt-swipe>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/newlist">
            <img src="images/menu1.png" />
           <div class="mui-media-body">新闻资讯</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -50,9 +50,9 @@
 import { Toast } from "mint-ui";
 export default {
   created() {
-    this.$http.jsonp("http://localhost:3333/lunbo").then(
+    this.$http.get("api/getlunbo").then(
       response => {
-        this.list = response.body;
+        this.list = response.body.message;
       },
       response => {
         Toast({
