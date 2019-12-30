@@ -1,2 +1,2 @@
 # Test Project
-day01 finish initialize
+项目初步开发完成
