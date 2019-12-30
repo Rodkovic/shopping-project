@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { Toast } from "mint-ui";
 export default {
   created() {
     this.getNewList();

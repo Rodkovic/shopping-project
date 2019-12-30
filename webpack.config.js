@@ -11,7 +11,8 @@ module.exports = {
     devServer: {
         port: 3000,
         open: true,
-        contentBase: './src'
+        contentBase: './src',
+        host: '192.168.50.16'
     },
     plugins: [
         new htmlWebpackPlugin({

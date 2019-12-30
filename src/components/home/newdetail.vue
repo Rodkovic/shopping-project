@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import comment from '../comment.vue'
+import { Toast } from "mint-ui";
+import comment from "../comment.vue";
 export default {
   created() {
     this.getNewDetail();
@@ -28,7 +29,13 @@ export default {
         response => {
           this.newDetail = response.body.message[0];
         },
-        response => {}
+        response => {
+          Toast({
+            message: "获取消息失败",
+            position: "bottom",
+            duration: 5000
+          });
+        }
       );
     }
   },

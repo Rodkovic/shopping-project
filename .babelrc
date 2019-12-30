@@ -1,5 +1,5 @@
 {
-    "plugins": ["component", [
+    "plugins": ["transform-remove-strict-mode","component", [
       {
         "libraryName": "mint-ui",
         "style": true
