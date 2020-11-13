@@ -93,7 +93,7 @@ export default {
     getGoodinfo() {
       this.$http.get("api/goods/getinfo/" + this.id).then(
         response => {
-          this.goodinfo = response.body.message[0];
+          this.goodinfo = response.data.message[0];
         },
         response => {}
       );

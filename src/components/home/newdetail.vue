@@ -27,7 +27,7 @@ export default {
     getNewDetail() {
       this.$http.get("api/getnew/" + this.id).then(
         response => {
-          this.newDetail = response.body.message[0];
+          this.newDetail = response.data.message[0];
         },
         response => {
           Toast({

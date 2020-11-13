@@ -52,7 +52,7 @@ export default {
         this.$http.get('api/goods/getshopcarlist/' + carNumList)
         .then(
           response => {
-            var carDatas = response.body.message;
+            var carDatas = response.data.message;
             
             publicCarList.forEach(item => {
               let cardata = {};

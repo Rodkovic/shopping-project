@@ -4,7 +4,8 @@ import app from './app.vue'
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 import router from './router.js'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
+import axios from 'axios'
 import VuePreview from 'vue-preview'
 import Vuex from 'vuex'
 
@@ -13,9 +14,11 @@ Vue.use(VueRouter)
 import MintUI from 'mint-ui'
 Vue.use(MintUI)
 import 'mint-ui/lib/style.css'
-Vue.use(VueResource)
-Vue.http.options.root = 'http://www.liulongbin.top:3005'
-Vue.http.options.emulateJSON = true
+// Vue.use(VueResource)
+axios.defaults.baseURL = 'http://www.liulongbin.top:3005'
+// Vue.http.options.root = 'http://www.liulongbin.top:3005'
+// Vue.http.options.emulateJSON = true
+Vue.prototype.$http = axios
 
 Vue.use(VuePreview)
 

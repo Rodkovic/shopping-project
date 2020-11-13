@@ -29,7 +29,7 @@ export default {
     getPicInfo() {
       this.$http.get("api/getimageInfo/" + this.id).then(
         response => {
-          this.picInfo = response.body.message[0];
+          this.picInfo = response.data.message[0];
         },
         response => {}
       );
@@ -37,7 +37,7 @@ export default {
     getPicList() {
       this.$http.get("api/getthumimages/" + this.id).then(
         response => {
-          let list = response.body.message;
+          let list = response.data.message;
           list.forEach((item, i) => {
             item.w = 600;
             item.h = 600;

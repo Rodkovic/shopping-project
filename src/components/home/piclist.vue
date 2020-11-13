@@ -53,7 +53,7 @@ export default {
     getCategory() {
       this.$http.get("api/getimgcategory").then(
         response => {
-          this.categoryList = response.body.message;
+          this.categoryList = response.data.message;
           this.categoryId = this.categoryList[0].id;
           this.getCategoryDetail(this.categoryId);
         },
@@ -63,7 +63,7 @@ export default {
     getCategoryDetail(id) {
       this.$http.get("api/getimages/" + id).then(
         response => {
-          this.picList = response.body.message;
+          this.picList = response.data.message;
         },
         response => {}
       );

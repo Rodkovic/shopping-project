@@ -12,7 +12,7 @@ module.exports = {
         port: 3000,
         open: true,
         contentBase: './src',
-        host: '192.168.50.16'
+        host: '192.168.50.103'
     },
     plugins: [
         new htmlWebpackPlugin({
@@ -25,7 +25,16 @@ module.exports = {
         rules: [
             { test: /\.vue$/, loader: 'vue-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=43960' },
+            { test: /\.(jpg|png|gif|bmp|jpeg)$/, 
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            esModule: false
+                        }
+                    }
+                ]
+            },
             { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' },
             { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
         ]

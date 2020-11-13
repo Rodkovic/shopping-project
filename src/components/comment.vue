@@ -31,7 +31,7 @@ export default {
         .get("api/getcomments/" + this.parentId + "?pageindex=" + this.pageindex)
         .then(
           response => {
-            this.commentList = this.commentList.concat(response.body.message);
+            this.commentList = this.commentList.concat(response.data.message);
           },
           response => {}
         );

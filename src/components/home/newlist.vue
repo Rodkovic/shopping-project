@@ -32,7 +32,7 @@ export default {
     getNewList() {
       this.$http.get("api/getnewslist").then(
         response => {
-          this.newlist = response.body.message;
+          this.newlist = response.data.message;
         },
         response => {
           Toast({
